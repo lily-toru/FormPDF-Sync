@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="DELETE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_1755799_formpdf_confirmation_dialog.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly xmlns:j="jelly:core">
+<div style="padding: 15px;">
+    <h3 style="margin-top:0">确认操作</h3>
+    <p>确定要更新字段 <b>${gs.getMessage(sysparm_field_label)}</b> 吗？</p>
+    
+    <div style="text-align:right;margin-top:20px">
+        <button class="btn btn-default" onclick="cancelAction()">取消</button>
+        <button class="btn btn-primary" onclick="confirmAction()" style="margin-left:10px">确定</button>
+    </div>
+</div>
+
+<script>
+function confirmAction() {
+    var ga = new GlideAjax('FieldUpdater');
+    ga.addParam('sysparm_name', 'updateField');
+    ga.addParam('sysparm_record_id', '${sysparm_record_id}');
+    ga.addParam('sysparm_table_name', '${sysparm_table_name}');
+    ga.addParam('sysparm_field_name', '${sysparm_field_name}');
+    ga.addParam('sysparm_field_value', '${sysparm_field_value}');
+    
+    ga.getXMLAnswer(function(response) {
+        if (response === 'success') {
+            window.parent.g_form.setValue('${sysparm_field_name}', '${sysparm_field_value}');
+            window.parent.GlideModal.get().destroy();
+            window.parent.g_form.showFieldMsg('字段已更新', 'info');
+        } else {
+            alert('更新失败: ' + response);
+        }
+    });
+}
+
+function cancelAction() {
+    window.parent.GlideModal.get().destroy();
+}
+</script>
+</j:jelly>]]></html>
+        <name>confirmation_dialog</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-29 06:17:38</sys_created_on>
+        <sys_id>d1147f6147fdea1028da392f316d4370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>confirmation_dialog</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_update_name>sys_ui_page_d1147f6147fdea1028da392f316d4370</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-29 06:17:38</sys_updated_on>
+    </sys_ui_page>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</application>
+        <file_path/>
+        <instance_id>6ee249eeff956e10c80bf8e4fc4fd9c7</instance_id>
+        <instance_name>dev346879</instance_name>
+        <name>sys_ui_page_d1147f6147fdea1028da392f316d4370</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script/&gt;&lt;description/&gt;&lt;direct&gt;false&lt;/direct&gt;&lt;endpoint&gt;x_1755799_formpdf_confirmation_dialog.do&lt;/endpoint&gt;&lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly xmlns:j="jelly:core"&gt;
+&lt;div style="padding: 15px;"&gt;
+    &lt;h3 style="margin-top:0"&gt;确认操作&lt;/h3&gt;
+    &lt;p&gt;确定要更新字段 &lt;b&gt;${gs.getMessage(sysparm_field_label)}&lt;/b&gt; 吗？&lt;/p&gt;
+    
+    &lt;div style="text-align:right;margin-top:20px"&gt;
+        &lt;button class="btn btn-default" onclick="cancelAction()"&gt;取消&lt;/button&gt;
+        &lt;button class="btn btn-primary" onclick="confirmAction()" style="margin-left:10px"&gt;确定&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function confirmAction() {
+    var ga = new GlideAjax('FieldUpdater');
+    ga.addParam('sysparm_name', 'updateField');
+    ga.addParam('sysparm_record_id', '${sysparm_record_id}');
+    ga.addParam('sysparm_table_name', '${sysparm_table_name}');
+    ga.addParam('sysparm_field_name', '${sysparm_field_name}');
+    ga.addParam('sysparm_field_value', '${sysparm_field_value}');
+    
+    ga.getXMLAnswer(function(response) {
+        if (response === 'success') {
+            window.parent.g_form.setValue('${sysparm_field_name}', '${sysparm_field_value}');
+            window.parent.GlideModal.get().destroy();
+            window.parent.g_form.showFieldMsg('字段已更新', 'info');
+        } else {
+            alert('更新失败: ' + response);
+        }
+    });
+}
+
+function cancelAction() {
+    window.parent.GlideModal.get().destroy();
+}
+&lt;/script&gt;
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;confirmation_dialog&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-29 06:17:38&lt;/sys_created_on&gt;&lt;sys_id&gt;d1147f6147fdea1028da392f316d4370&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;confirmation_dialog&lt;/sys_name&gt;&lt;sys_package display_value="FormPDF Sync" source="x_1755799_formpdf"&gt;aea3b36147fdea1028da392f316d438c&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="FormPDF Sync"&gt;aea3b36147fdea1028da392f316d438c&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_d1147f6147fdea1028da392f316d4370&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-29 06:17:38&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1849572376</payload_hash>
+        <record_name>confirmation_dialog</record_name>
+        <reverted_from/>
+        <source>aaa3b36147fdea1028da392f316d4391</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-29 06:17:39</sys_created_on>
+        <sys_id>9c34ff6147fdea1028da392f316d43d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1971ab06e570000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-29 06:17:39</sys_updated_on>
+        <type>UI Page</type>
+        <update_guid>9034ff6195fdea104a52c056e71dded2</update_guid>
+        <update_guid_history>9034ff6195fdea104a52c056e71dded2:-1849572376</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-29 06:18:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_page">sys_ui_page</sys_db_object>
+        <sys_id>57cbb78d615143d8b708c1da3c9bd271</sys_id>
+        <sys_metadata>d1147f6147fdea1028da392f316d4370</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>confirmation_dialog</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_scope_delete display_value="">48b6dd12e8d543c0ac24c01045854100</sys_scope_delete>
+        <sys_update_name>sys_ui_page_d1147f6147fdea1028da392f316d4370</sys_update_name>
+        <sys_update_version display_value="sys_ui_page_d1147f6147fdea1028da392f316d4370">9c34ff6147fdea1028da392f316d43d2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-29 06:18:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

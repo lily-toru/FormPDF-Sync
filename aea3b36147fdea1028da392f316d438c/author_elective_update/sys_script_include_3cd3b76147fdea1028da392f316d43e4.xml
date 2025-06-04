@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1755799_formpdf.PDFGenerator</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PDFGenerator</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PDFGeneratorUtils = Class.create();
+PDFGeneratorUtils.prototype = {
+    initialize: function() {
+    },
+    
+    /**
+     * Generate PDF for a given record
+     * @param {string} tableName - The table name
+     * @param {string} sysId - The record sys_id
+     * @returns {string} PDF file URL
+     */
+    generatePDF: function(tableName, sysId) {
+        try {
+            // ServiceNow's built-in PDF generation endpoint
+            var pdfEndpoint = '/' + tableName + '.do?sys_id=' + sysId + '&sysparm_view=export_to_pdf&PDF';
+            return pdfEndpoint;
+        } catch (ex) {
+            gs.error('Error generating PDF: ' + ex.getMessage());
+            return null;
+        }
+    },
+    
+    type: 'PDFGeneratorUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-29 06:16:27</sys_created_on>
+        <sys_id>3cd3b76147fdea1028da392f316d43e4</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>PDFGenerator</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_update_name>sys_script_include_3cd3b76147fdea1028da392f316d43e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 07:36:27</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</application>
+        <file_path/>
+        <instance_id>6ee249eeff956e10c80bf8e4fc4fd9c7</instance_id>
+        <instance_name>dev346879</instance_name>
+        <name>sys_script_include_3cd3b76147fdea1028da392f316d43e4</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1755799_formpdf.PDFGenerator&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;PDFGenerator&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var PDFGeneratorUtils = Class.create();
+PDFGeneratorUtils.prototype = {
+    initialize: function() {
+    },
+    
+    /**
+     * Generate PDF for a given record
+     * @param {string} tableName - The table name
+     * @param {string} sysId - The record sys_id
+     * @returns {string} PDF file URL
+     */
+    generatePDF: function(tableName, sysId) {
+        try {
+            // ServiceNow's built-in PDF generation endpoint
+            var pdfEndpoint = '/' + tableName + '.do?sys_id=' + sysId + '&amp;sysparm_view=export_to_pdf&amp;PDF';
+            return pdfEndpoint;
+        } catch (ex) {
+            gs.error('Error generating PDF: ' + ex.getMessage());
+            return null;
+        }
+    },
+    
+    type: 'PDFGeneratorUtils'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-29 06:16:27&lt;/sys_created_on&gt;&lt;sys_id&gt;3cd3b76147fdea1028da392f316d43e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;22&lt;/sys_mod_count&gt;&lt;sys_name&gt;PDFGenerator&lt;/sys_name&gt;&lt;sys_package display_value="FormPDF Sync" source="x_1755799_formpdf"&gt;aea3b36147fdea1028da392f316d438c&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="FormPDF Sync"&gt;aea3b36147fdea1028da392f316d438c&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_3cd3b76147fdea1028da392f316d43e4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-05-30 07:36:27&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>719531452</payload_hash>
+        <record_name>PDFGenerator</record_name>
+        <reverted_from/>
+        <source>aaa3b36147fdea1028da392f316d4391</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 07:36:27</sys_created_on>
+        <sys_id>dcdf8d0a473d6e1028da392f316d43cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197201eede90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 07:36:27</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>94df8d0ae53d6e10e84e2e5fd694a5cf</update_guid>
+        <update_guid_history>94df8d0ae53d6e10e84e2e5fd694a5cf:719531452,a4ddcd46a33d6e10907b2336bf1d122b:296322549,13bdcd46df3d6e1089711c230bdd18ee:569341136,427b41c2753d6e10cf52b4fd0ed6b516:2115350891,3b69450ec2f96e105a7fcc35d77d2271:412370926,e1044dc668f96e1022f226f1635b05e2:-1775614526,61f24586fff96e102b54651e1d45784a:-581427865,ea324582cef96e107f647ec42d28dc74:-1679534221,6822058261f96e10f6e0b4e889d5867a:1365388025,9332b4ce46796e10a82090a73b289aea:-1250935497,9536504a58f56e10b67efcfa7f535a15:414667900,25d5104a67f56e10cb211d4b0fb5a886:1547941186,b4b3108682f56e10c305bf786db52be6:414667900,fb535406b2f56e10b17073284f8e0a3b:1302249990,aea2180605f56e106a2d508998f416fd:-1995618007,a37fc44e1cb56e10d1851af07cecb5c7:-1312151235,71cfd43114f12e103a671b859a5bdaeb:1256704297,c19e18b95cb12e10c123fa1898eb5a0d:2096378850,0fbf4479db712e10e08ce4d7d6ffa72d:-116478610,f0260c7979312e10f7be694cadc0d04d:87517860,4a91c871e0312e1098108dd23066d229:1761271413,0116336523fdea10602d9b8fe43051dc:1547380915,36e3332162fdea10f91c82b35cf65f28:2047322472</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-30 09:26:43</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>4a5c5618f5864587a7d9030306987f41</sys_id>
+        <sys_metadata>3cd3b76147fdea1028da392f316d43e4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PDFGenerator</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_scope_delete display_value="">48b6dd12e8d543c0ac24c01045854100</sys_scope_delete>
+        <sys_update_name>sys_script_include_3cd3b76147fdea1028da392f316d43e4</sys_update_name>
+        <sys_update_version display_value="sys_script_include_3cd3b76147fdea1028da392f316d43e4">dcdf8d0a473d6e1028da392f316d43cf</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-30 09:26:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

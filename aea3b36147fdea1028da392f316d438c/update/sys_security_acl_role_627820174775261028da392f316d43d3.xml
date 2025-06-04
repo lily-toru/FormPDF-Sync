@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-03 01:57:18</sys_created_on>
+        <sys_id>627820174775261028da392f316d43d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sys_ui_page.admin</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_security_acl display_value="sys_ui_page">39752c134775261028da392f316d43b2</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_627820174775261028da392f316d43d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-03 01:57:18</sys_updated_on>
+        <sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

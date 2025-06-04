@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1755799_formpdf.FieldUpdater</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>FieldUpdater</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var FieldUpdater = Class.create();
+FieldUpdater.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    updateField: function() {
+        try {
+            var recordId = this.getParameter('sysparm_record_id');
+			gs.info('TEST log:' + recordId);
+            var gr = new GlideRecord('incident');
+            
+            if (gr.get(recordId)) {
+                gr.comments = 'Updated via confirmation dialog at ' + new GlideDateTime().getDisplayValue();
+                return gr.update() ? 'success' : 'failed';
+            }
+            return 'failed';
+        } catch (e) {
+            gs.error('Field update failed: ' + e.getMessage());
+            return 'failed';
+        }
+    },
+    type: 'FieldUpdater'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-29 06:16:55</sys_created_on>
+        <sys_id>66f3f36147fdea1028da392f316d43d6</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>FieldUpdater</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_update_name>sys_script_include_66f3f36147fdea1028da392f316d43d6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-04 00:52:22</sys_updated_on>
+    </sys_script_include>
+</record_update>

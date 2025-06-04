@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function showResult(message, isSuccess) {
+
+	gel('mainContent').style.display = 'none';
+	
+	var resultDiv = gel('resultContent');
+	var msgElement = gel('resultMessage');
+	
+	msgElement.innerHTML = message;
+	msgElement.style.color = isSuccess ? '#3c763d' : '#a94442';
+	resultDiv.style.display = 'block';
+}
+
+function closeDialog() {
+	if (window.parent.g_form) {
+		window.parent.g_form.refresh();
+	}
+	GlideDialogWindow.get().destroy();
+}
+
+function confirmUpdate() {
+	var recordId = gel('sysparm_record_id').value;
+	
+	var ga = new GlideAjax('FieldUpdater');
+	ga.addParam('sysparm_name', 'updateField');
+	ga.addParam('sysparm_record_id', recordId);
+	
+	ga.getXMLAnswer(function(response) {
+	if (response === 'success') {
+		showResult('Record updated successfully!', true);
+	} else {
+		showResult('Record update failed: ' + response, false);
+	}
+	});
+	return false;
+}
+    
+function cancelDialog() {
+	GlideDialogWindow.get().destroy();
+	return false;
+}]]></client_script>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_1755799_formpdf_confirmation_dialog.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+  <g:ui_form>
+    <input type="hidden" name="sysparm_record_id" id="sysparm_record_id" value="${sysparm_record_id}"/>
+    <div id="mainContent" style="padding: 15px;">
+      <p>Are you sure you want to update this record?</p>
+      <div style="text-align: right; margin-top: 20px;">
+        <g:dialog_buttons_ok_cancel 
+            ok="return confirmUpdate();" 
+            cancel="return cancelDialog();"/>
+      </div>
+    </div>
+
+    <div id="resultContent" style="display:none; padding:8px; text-align:center;">
+      <h3 id="resultMessage"></h3>
+      <button class="btn btn-default" onclick="closeDialog();" style="margin-top:8px;">
+        关闭
+      </button>
+    </div>
+
+  </g:ui_form>
+</j:jelly>]]></html>
+        <name>confirmation_dialog</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-29 06:20:00</sys_created_on>
+        <sys_id>e694bba147fdea1028da392f316d436b</sys_id>
+        <sys_mod_count>120</sys_mod_count>
+        <sys_name>confirmation_dialog</sys_name>
+        <sys_package display_value="FormPDF Sync" source="x_1755799_formpdf">aea3b36147fdea1028da392f316d438c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FormPDF Sync">aea3b36147fdea1028da392f316d438c</sys_scope>
+        <sys_update_name>sys_ui_page_e694bba147fdea1028da392f316d436b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-06-04 01:44:42</sys_updated_on>
+    </sys_ui_page>
+</record_update>
